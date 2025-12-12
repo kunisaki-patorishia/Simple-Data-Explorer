@@ -65,5 +65,5 @@ export const fetchRoles = async (): Promise<string[]> => {
 };
 
 export const seedDatabase = async (count: number = 100): Promise<void> => {
-  await api.post('/seed/', { count });
+  await api.post(`/seed/?count=${count}`);
 };
