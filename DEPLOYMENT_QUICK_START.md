@@ -14,7 +14,10 @@ git push origin main
 1. Go to [railway.app](https://railway.app) → New Project
 2. Select "Deploy from GitHub repo"
 3. Choose your repository
-4. **Set Root Directory**: `backend`
+4. **IMPORTANT: Set Root Directory to `backend`**
+   - Go to Settings → Root Directory
+   - Enter: `backend`
+   - This tells Railway where to find the Dockerfile
 5. **Add PostgreSQL**: New → Database → PostgreSQL
 6. **Set Environment Variables**:
    ```
@@ -27,7 +30,10 @@ git push origin main
 ### Step 3: Deploy Frontend
 
 1. In same Railway project: New → GitHub Repo
-2. **Set Root Directory**: `frontend`
+2. **IMPORTANT: Set Root Directory to `frontend`**
+   - Go to Settings → Root Directory
+   - Enter: `frontend`
+   - This tells Railway where to find the Dockerfile
 3. **Set Environment Variable**:
    ```
    NEXT_PUBLIC_API_URL=https://your-backend.railway.app

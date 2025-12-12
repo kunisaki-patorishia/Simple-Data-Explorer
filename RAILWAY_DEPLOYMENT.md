@@ -30,7 +30,8 @@ This guide will help you deploy the Simple Data Explorer application to Railway.
    - Or manually set root directory to `backend`
 
 3. **Configure Backend**
-   - **Root Directory**: `backend`
+   - **IMPORTANT: Set Root Directory to `backend`** (Settings → Root Directory)
+   - Railway will automatically find `backend/Dockerfile`
    - **Build Command**: (Auto-detected from Dockerfile)
    - **Start Command**: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
 
@@ -60,7 +61,8 @@ This guide will help you deploy the Simple Data Explorer application to Railway.
    - Set root directory to `frontend`
 
 2. **Configure Frontend**
-   - **Root Directory**: `frontend`
+   - **IMPORTANT: Set Root Directory to `frontend`** (Settings → Root Directory)
+   - Railway will automatically find `frontend/Dockerfile`
    - **Build Command**: (Auto-detected from Dockerfile)
    - **Start Command**: `node server.js`
 
