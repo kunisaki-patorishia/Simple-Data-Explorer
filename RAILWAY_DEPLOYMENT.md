@@ -26,14 +26,16 @@ This guide will help you deploy the Simple Data Explorer application to Railway.
 2. **Add Backend Service**
    - Click "New" → "GitHub Repo"
    - Select your repository
-   - Railway will detect the `backend` folder
-   - Or manually set root directory to `backend`
+   - **CRITICAL: Before deploying, go to Settings**
+   - **Set Root Directory to: `backend`** (exactly, lowercase, no slash)
+   - Railway will now find `backend/Dockerfile`
+   - **Build Type**: Should auto-detect as "Dockerfile" (if not, set it manually)
 
 3. **Configure Backend**
-   - **IMPORTANT: Set Root Directory to `backend`** (Settings → Root Directory)
-   - Railway will automatically find `backend/Dockerfile`
+   - **Root Directory**: `backend` (must be set!)
    - **Build Command**: (Auto-detected from Dockerfile)
    - **Start Command**: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
+   - **Save settings**
 
 4. **Add PostgreSQL Database** (Optional but Recommended)
    - Click "New" → "Database" → "Add PostgreSQL"
@@ -58,13 +60,16 @@ This guide will help you deploy the Simple Data Explorer application to Railway.
 1. **Add Frontend Service**
    - In the same Railway project, click "New" → "GitHub Repo"
    - Select the same repository
-   - Set root directory to `frontend`
+   - **CRITICAL: Before deploying, go to Settings**
+   - **Set Root Directory to: `frontend`** (exactly, lowercase, no slash)
+   - Railway will now find `frontend/Dockerfile`
+   - **Build Type**: Should auto-detect as "Dockerfile" (if not, set it manually)
 
 2. **Configure Frontend**
-   - **IMPORTANT: Set Root Directory to `frontend`** (Settings → Root Directory)
-   - Railway will automatically find `frontend/Dockerfile`
+   - **Root Directory**: `frontend` (must be set!)
    - **Build Command**: (Auto-detected from Dockerfile)
    - **Start Command**: `node server.js`
+   - **Save settings**
 
 3. **Set Environment Variables**
    - Go to frontend service → Variables tab
