@@ -2,6 +2,15 @@
 
 This guide will help you deploy the Simple Data Explorer application to Railway.
 
+## ⚠️ CRITICAL FIRST STEP
+
+**Before deploying, you MUST set the Root Directory in Railway dashboard for each service!**
+
+- Backend service: Root Directory = `backend`
+- Frontend service: Root Directory = `frontend`
+
+If you see errors about `root_dir=` being empty, see [RAILWAY_URGENT_FIX.md](./RAILWAY_URGENT_FIX.md) for step-by-step instructions.
+
 ## Prerequisites
 
 1. **Railway Account**: Sign up at [railway.app](https://railway.app)
