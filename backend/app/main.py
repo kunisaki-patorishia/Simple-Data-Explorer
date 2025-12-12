@@ -4,6 +4,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy import func
 from typing import Optional
+import os
 import models, schemas, crud
 from database import SessionLocal, engine, Base
 from datetime import datetime, timedelta
@@ -50,10 +51,15 @@ def get_cached_or_compute(cache_key, compute_func):
     cache[cache_key] = (result, datetime.now())
     return result
 
+# CORS configuration - supports both localhost and production URLs
+allowed_origins = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000").split(",")
+if os.getenv("FRONTEND_URL"):
+    allowed_origins.append(os.getenv("FRONTEND_URL"))
+
 # CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

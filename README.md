@@ -9,7 +9,7 @@ A full-stack application featuring a data table with filtering, sorting, and pag
 - ✅ Filtering by search term, department, and role
 - ✅ Sorting by any column in ascending/descending order
 - ✅ Pagination with configurable page size (1-100 records per page)
-- ✅ SQLite database with seeding capability
+- ✅ SQLite database (local) or PostgreSQL (production) with seeding capability
 - ✅ CORS configured for frontend communication
 - ✅ Comprehensive error handling for invalid requests
 - ✅ Simple in-memory caching (30-second TTL) for improved performance
@@ -28,13 +28,24 @@ A full-stack application featuring a data table with filtering, sorting, and pag
 ### Bonus Features
 - ✅ Docker Compose setup for running both services together
 - ✅ Simple caching mechanism to speed up repeated queries
+- ✅ Railway deployment ready with PostgreSQL support
 
 ## Prerequisites
 
 - **Docker and Docker Compose** (recommended for easy setup)
 - **OR** Node.js 18+ and Python 3.11+ (for manual setup)
+- **OR** Railway account (for cloud deployment - see [RAILWAY_DEPLOYMENT.md](./RAILWAY_DEPLOYMENT.md))
 
-## Quick Start with Docker
+## Deployment Options
+
+### 🚀 Deploy to Railway (Cloud - Recommended for Production)
+
+Deploy both backend and frontend to Railway for free:
+- See [RAILWAY_DEPLOYMENT.md](./RAILWAY_DEPLOYMENT.md) for complete guide
+- Automatic HTTPS, PostgreSQL database, and custom domains
+- Free tier includes $5 credit/month
+
+### 🐳 Quick Start with Docker (Local)
 
 1. Clone the repository:
 ```bash
