@@ -3,6 +3,8 @@
 ## The Problem
 Railway couldn't find the Dockerfile because it was looking in the root directory, but your Dockerfiles are in `backend/` and `frontend/` folders.
 
+**OR** Railway is trying to use buildpacks instead of Docker.
+
 ## Solution: Set Root Directory in Railway
 
 ### For Backend Service:
@@ -49,6 +51,11 @@ After setting the root directory:
 
 - [ ] Backend service has Root Directory = `backend`
 - [ ] Frontend service has Root Directory = `frontend`
+- [ ] Build Type is set to `Dockerfile` (not Nixpacks/Buildpack)
 - [ ] Both services are redeployed after changing root directory
 - [ ] Build logs show Dockerfile found successfully
+
+## If You See Buildpack Errors
+
+If Railway is trying to use buildpacks instead of Docker, see [RAILWAY_BUILDPACK_FIX.md](./RAILWAY_BUILDPACK_FIX.md) for detailed instructions.
 
